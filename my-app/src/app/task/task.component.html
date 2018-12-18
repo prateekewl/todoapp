@@ -1,0 +1,46 @@
+<h2>Task Page</h2>
+
+<div class="task">
+  <form>
+    <div>
+      <label>Task Name</label>
+      <input [(ngModel)]="taskName" name="tname" type="text"/>
+    </div>
+    <div>
+      <label>Description</label>
+      <textarea [(ngModel)]="taskDesc" name="tdesc"></textarea>
+    </div>
+    <div>
+      <label>Date</label>
+      <input [(ngModel)]="taskDate" name="tdate" type="text"/>
+    </div>
+    <div>
+      <label>Status</label>
+      <input [(ngModel)]="taskStatus" name="tstatus" type="text"/>
+    </div>
+  </form>
+  <button (click)="addTask()" [hidden]="showUpdate">Add Task</button>
+  <button (click)="update()" [hidden]="!showUpdate">Update</button>
+</div>
+
+<div class="task-list">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Date</td>
+      <td>Status</td>
+      <td>Operations</td>
+    </tr>
+    <tr class="task-item" *ngFor="let task of tasks">
+      <td>{{task.name}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.lastDate}}</td>
+      <td>{{task.status}}</td>
+      <td>
+        <button (click)="editTask(task)">Edit</button>
+        <button (click)="delTask(task)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>

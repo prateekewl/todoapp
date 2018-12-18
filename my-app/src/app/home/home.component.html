@@ -1,0 +1,69 @@
+<a href="user">Goto User Page</a>
+<p [hidden]="showElement">home works!</p>
+<p> {{ testVar}} </p>
+<button (click)="toggleVisibility()"> Toggle </button>
+<div class="table">
+<ul>
+  <li *ngFor="let i of someArr; let ind = index"> {{ ind + 1 }} x {{ someArr[0] }} = {{i}}</li>
+</ul>
+
+<button (click)="decrement1()"> &lt; Previous</button>
+<button (click)="increment1()">Next &gt; </button>
+</div>
+<button (click)="callApi()">Get Data From Server</button>
+<button (click)="callApi2()">Get Data From Server API2</button>
+<p>status: {{ apiData?.status }}</p>
+<p>msg: {{ apiData?.msg }}</p>
+<p>sentence: {{apiData?.sentence }}</p>
+<p>Results: </p>
+
+<div class="result-item" *ngFor="let user of apiData?.results">
+  <p>Name: {{ user.name }}</p>
+  <p>Email: {{ user.email }}</p>
+  <p>Password: {{ user.password }}</p>
+  <p>First name: {{ user.firstname }}</p>
+  <p>Surname: {{ user.surname }}</p>
+  <p>Phone Number: {{ user.phonenumber }}
+
+</div>
+<!-- <p> Email: {{email}}</p> -->
+<!-- <p> Password: {{pwd}}</p> -->
+<div class="form-wrapper">
+  <form>
+    <div>
+      <label for="email">Email</label>
+      <input [(ngModel)]="email" type="email" name="email" id="email"/>
+    </div>
+    <div>
+      <label for="pwd">Password</label>
+      <input [(ngModel)]="pwd" type="password" name="pwd" id="pwd"/>
+    </div>
+    <div>
+      <label for="firstname">First Name</label>
+      <input [(ngModel)]="firstname" type="firstname" name="firstname" id="firstname"/>
+    </div>
+    <div>
+      <label for="firstname">Surname</label>
+      <input [(ngModel)]="surname" type="surname" name="surname" id="surname"/>
+    </div>
+    <div>
+      <label for="phonenumber">Phone Number</label>
+      <input [(ngModel)]="phonenumber" type="phonenumber" name="phonenumber" id="phonenumber"/>
+    </div>
+  </form>
+</div>
+<button (click)="register()">Register</button>
+<button (click)="getAllUsers()">Get All Users</button>
+
+<!-- <ul>
+  <li *ngFor="let i of someArr2">{{i}}</li>
+</ul>
+<button (click)="increment2()">Increment</button>
+<button (click)="decrement2()">Decrement</button>
+
+
+<ul>
+  <li *ngFor="let i of someArr3">{{i}}</li>
+</ul>
+<button (click)="increment3()">Increment</button>
+<button (click)="decrement3()">Decrement</button> -->

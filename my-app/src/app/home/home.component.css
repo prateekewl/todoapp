@@ -1,0 +1,11 @@
+div.table {
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
+}
+ul {
+  list-style: none outside none;
+}
+.result-item {
+  border: 1px solid #000;
+}

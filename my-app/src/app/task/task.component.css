@@ -1,0 +1,10 @@
+label {
+    display: block;
+}
+.task {
+  width: 40%;
+  margin: 0 auto;
+}
+input, textarea {
+  width: 100%;
+}

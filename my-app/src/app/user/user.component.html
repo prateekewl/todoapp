@@ -1,0 +1,46 @@
+<h2>User Page</h2>
+
+<div class="task">
+  <form>
+    <div>
+      <label>Email</label>
+      <input [(ngModel)]="email" name="tname" type="text"/>
+    </div>
+    <div>
+      <label>Firstname</label>
+      <input type="text" [(ngModel)]="fname" name="tdesc" />
+    </div>
+    <div>
+      <label>Lastname</label>
+      <input [(ngModel)]="lname" name="tdate" type="text"/>
+    </div>
+    <div>
+      <label>Password</label>
+      <input [(ngModel)]="pwd" name="tstatus" type="password"/>
+    </div>
+  </form>
+  <button (click)="addUser()" [hidden]="showUpdate">Add User</button>
+  <button (click)="update()" [hidden]="!showUpdate">Update</button>
+</div>
+
+<div class="task-list">
+  <table>
+    <tr>
+      <td>Email</td>
+      <td>Firstname</td>
+      <td>Surname</td>
+      <td>Password</td>
+      <td>Operations</td>
+    </tr>
+    <tr class="task-item" *ngFor="let user of users">
+      <td>{{user.email}}</td>
+      <td>{{user.firstname}}</td>
+      <td>{{user.lastname}}</td>
+      <td>{{user.password}}</td>
+      <td>
+        <button (click)="editUser(user)">Edit</button>
+        <button (click)="delUser(user)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
