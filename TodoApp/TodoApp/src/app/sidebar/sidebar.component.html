@@ -1,0 +1,56 @@
+<nav>
+    <ul>
+        <li>
+            <a data-toggle="modal" data-target="#listModal"><i class="material-icons"></i> Add List</a>
+        </li>
+        <li *ngFor="let list of lists">
+            <a routerLink="tasks">
+                <i class="material-icons">message</i>
+                {{ list.title }}
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- The Modal -->
+<div class="modal" id="listModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Todo</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                  this will have add new list option.
+                    <!-- <form [formGroup]="taskForm">
+                        <div class="form-group">
+                            <label for="title">Todo Title:</label>
+                            <input [formControl]="taskForm.controls.title" type="text" class="form-control" id="title">
+                        </div>
+                        <div class="err" *ngIf="taskForm.controls.title.errors && (taskForm.controls.title.touched || showErr)">
+                          The title should not be empty.
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea [formControl]="taskForm.controls.description" class="form-control" id="description" rows="5" cols="80"></textarea>
+                        </div>
+                        <div class="err" *ngIf="taskForm.controls.description.errors && (taskForm.controls.description.touched || showErr)">
+                          The description should not be empty.
+                        </div>
+                    </form> -->
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <!-- <button [hidden]="showUpdate" (click)="addTask()" data-dismiss="modal" class="btn btn-primary">Submit</button> -->
+                    <!-- <button [hidden]="!showUpdate" (click)="updateTask()" data-dismiss="modal" class="btn btn-primary">Update</button> -->
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
