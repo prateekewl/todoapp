@@ -7,14 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { LoginComponent} from './login/login.component';
 import { DataService } from './data.service';
 import { ListService } from './list.service';
+import { LoginService} from './login.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    TasksComponent
+    TasksComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { ListService } from './list.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataService, ListService],
+  providers: [DataService, ListService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

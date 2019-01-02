@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService } from '../list.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,7 +11,7 @@ export class SidebarComponent implements OnInit {
 
   public lists = [];
 
-  constructor(public listService: ListService) { }
+  constructor(public listService: ListService,  private router: Router) { }
 
   ngOnInit() {
     this.listService.getLists().subscribe(
@@ -22,6 +23,11 @@ export class SidebarComponent implements OnInit {
     )
 
 
+  }
+
+  logout(){
+
+    this.router.navigate(['/']);
   }
 
 }
