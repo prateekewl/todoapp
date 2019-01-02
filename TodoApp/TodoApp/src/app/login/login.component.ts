@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
    get f() { return this.loginForm.controls; }
 
     onSubmit() {
-      alert("Login success fully");
+      alert("Login successfully");
         this.router.navigate(['/task']);
         this.submitted = true;
 
